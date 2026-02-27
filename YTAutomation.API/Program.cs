@@ -83,10 +83,11 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-                .SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+                //.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+                .AllowAnyOrigin()
                 .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
+                .AllowAnyMethod();
+            // .AllowCredentials();
         });
 });
 
